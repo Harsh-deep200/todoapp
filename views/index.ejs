@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to My Website</title>
+    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 1rem;
+      }
+
+      main {
+        padding: 2rem;
+        text-align: center;
+      }
+
+      section {
+        margin: 2rem 0;
+      }
+
+      h1,
+      h2 {
+        color: #333;
+      }
+
+      section:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include("components/header",null)%>
+    <div><h2 style="align-content: end">welcome <%=username %></h2></div>
+    <main>
+      <section id="home">
+        <h1>Welcome to My Website</h1>
+        <p>This is the homepage content. Feel free to add your content here.</p>
+      </section>
+
+      <section id="about">
+        <h2>About Us</h2>
+        <p>
+          This is the About Us section. Add information about your website or
+          yourself here.
+        </p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>
+          Use this section to provide contact information or a contact form.
+        </p>
+      </section>
+
+      <section id="todo">
+        <h2>Todo List</h2>
+        <p>This is where you can display your Todo list or tasks.</p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <!-- <link rel="stylesheet" href="contact.css" /> -->
+    <style>
+      /* Global Styles */
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 1rem;
+      }
+
+      main {
+        padding: 2rem;
+        text-align: center;
+      }
+
+      /* Contact Page Specific Styles */
+      #contact {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      #contact h2 {
+        color: #333;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      label {
+        display: block;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        transition: border-color 0.3s ease;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      textarea:focus {
+        border-color: #555;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      button {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <%- include("components/header",null)%>
+    <div><h2 style="align-content: end">welcome <%=username %></h2></div>
+    <main>
+      <section id="contact">
+        <h2>Contact Us</h2>
+        <p>
+          Use this section to provide contact information or a contact form.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login and Signup</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        padding: 2rem;
+        width: 400px;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="password"],
+      button {
+        padding: 0.8rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      button {
+        background-color: #007bff;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+
+      .divider {
+        margin: 1rem 0;
+        text-align: center;
+      }
+
+      .divider::before,
+      .divider::after {
+        content: "";
+        display: inline-block;
+        width: 40%;
+        height: 1px;
+        background-color: #ccc;
+        vertical-align: middle;
+      }
+
+      .divider::before {
+        margin-right: 0.5rem;
+      }
+
+      .divider::after {
+        margin-left: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login</h1>
+      <form action="/login" method="post">
+        <!-- <form id="logincredentials"> -->
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+        <!-- <label for="ProfilePic">ProfilePic</label>
+        <input type="file" id="ProfilePic" name="ProfilePic" required /> -->
+        <% if(error) {%>
+        <p style="color: red"><%= error %></p>
+        <%}%>
+        <button type="submit">Login</button>
+      </form>
+      <div class="divider">or</div>
+      <h1>Signup</h1>
+      <form action="/signup" method="post">
+        <label for="newUsername">Username</label>
+        <input type="text" id="newUsername" name="newUsername" />
+        <label for="newPassword">Password</label>
+        <input type="password" id="newPassword" name="newPassword" required />
+        <!-- <label for="ProfilePic">ProfilePic</label>
+        <input type="file" id="ProfilePic" name="ProfilePic" required /> -->
+        <% if(saved){%>
+        <p style="color: #0056b3"><%= saved %></p>
+        <%}%>
+        <button type="submit">Signup</button>
+      </form>
+    </div>
+    <!-- <script>
+      document
+        .getElementById("logincredentials")
+        .addEventListener("submit", async (event) => {
+          event.preventDefault();
+          const form = event.target;
+          const formData = new FormData(form);
+          const credentials = Object.fromEntries(formData.entries());
+
+          try {
+            const response = await fetch("/login", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(credentials),
+            });
+
+            if (response.ok) {
+              alert("Credentials saved successfully.");
+              form.reset();
+            } else {
+              const data = await response.json();
+              alert(data.error || "Error saving credentials.");
+            }
+          } catch (error) {
+            console.error("Error saving credentials:", error);
+            alert("Error saving credentials.");
+          }
+        });
+    </script> -->
+  </body>
+</html>
